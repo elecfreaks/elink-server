@@ -1,0 +1,38 @@
+{
+  "name": "elink-server",
+  "version": "1.0.1",
+  "description": "For elink app and ecode offline app.",
+  "main": "dist/index.js",
+  "author": "Xu Hao",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --watch src -e ts,js --exec \"tsc && cross-env NODE_ENV=development node .\"",
+    "build": "node esbuild.config.mjs && tsc --emitDeclarationOnly",
+    "release": "npm run build && node release.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@abandonware/noble": "abandonware/noble#bac3efffa8983d783cbdfa94b3c37ea92c2adbb8",
+    "electron-log": "^4.4.4",
+    "serialport": "^9.2.8",
+    "ws": "^8.4.0"
+  },
+  "devDependencies": {
+    "@types/serialport": "^8.0.2",
+    "@types/ws": "^8.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.14.8",
+    "esbuild-clean-plugin": "^1.0.0",
+    "esbuild-node-externals": "^1.4.1",
+    "eslint": "^8.5.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.4"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.5",
+    "utf-8-validate": "^5.0.7"
+  }
+}
